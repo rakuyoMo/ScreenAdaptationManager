@@ -10,14 +10,6 @@
 #import "UIView+Border.h"
 #import "BaseView.h"
 
-#ifndef mainScreenH
-#define mainScreenH [UIScreen mainScreen].bounds.size.height
-#endif
-
-#ifndef mainScreenW
-#define mainScreenW [UIScreen mainScreen].bounds.size.width
-#endif
-
 @implementation BaseView
 
 + (instancetype)sharedManager {
@@ -33,14 +25,15 @@
     
     if (self = [super init] ) {
         
-        
 #pragma mark - 基础视图设置。
 #pragma mark 主正方形
         self.backgroundColor = [UIColor whiteColor];
         
+        CGSize superViewOfmainView = self.superview.frame.size;
+        
         self.mainViewX = 0;
-        self.mainViewY = (mainScreenH - mainScreenW) / 2;
-        self.mainViewLength = mainScreenW;
+        self.mainViewY = (superViewOfmainView.height - superViewOfmainView.width) / 2;
+        self.mainViewLength = superViewOfmainView.width;
         
         self.frame = CGRectMake(self.mainViewX, self.mainViewY, self.mainViewLength, self.mainViewLength);
         
@@ -57,7 +50,6 @@
         CGFloat baseY = 10;
         CGFloat baseH = self.mainViewLength / 2 - baseY - baseS;
         CGFloat baseW = self.mainViewLength / 2 - baseX - baseS;
-        
         
         UIView *childView1 = [[UIView alloc] initWithFrame:CGRectMake(baseX, baseY, baseW, baseH)];
         self.childView1 = childView1;
@@ -93,7 +85,6 @@
         CGColorRef green = (__bridge CGColorRef _Nullable)((__bridge id)[UIColor greenColor].CGColor);
         [self.childView4 borderViewInColor:green];
         
-        
         // 添加子视图。
         [self.leftView addSubview:self.childView1];
         [self.leftView addSubview:self.childView2];
@@ -101,7 +92,6 @@
         [self.rightView addSubview:self.childView3];
         [self.rightView addSubview:self.childView4];
     }
-    
     return self;
 }
 
