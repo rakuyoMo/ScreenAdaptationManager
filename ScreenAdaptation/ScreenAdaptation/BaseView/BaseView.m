@@ -7,6 +7,7 @@
 //
 
 #import <QuartzCore/QuartzCore.h>
+#import "UIView+changeFrame.h"
 #import "UIView+Border.h"
 #import "BaseView.h"
 
@@ -22,7 +23,7 @@
 //}
 
 - (instancetype)initWithSuperview:(UIView *)superView {
-    
+
     if (self = [super init] ) {
         
 #pragma mark - 基础视图设置。
@@ -31,9 +32,16 @@
         
         CGSize superViewOfmainView = superView.frame.size;
         
-        self.mainViewX = 0;
-        self.mainViewY = (superViewOfmainView.height - superViewOfmainView.width) / 2;
-        self.mainViewLength = superViewOfmainView.width;
+        // 按照初始进入时屏幕的方向初始化视图Frames。
+        [self changeViewFrameOnCrossScreen:^{
+            self.mainViewX = fabs((superViewOfmainView.height - superViewOfmainView.width) / 2);
+            self.mainViewY = 0;
+            self.mainViewLength = superViewOfmainView.height;
+        } OrVerticalScreen:^{
+            self.mainViewX = 0;
+            self.mainViewY = fabs((superViewOfmainView.height - superViewOfmainView.width) / 2);
+            self.mainViewLength = superViewOfmainView.width;
+        }];
         
         self.frame = CGRectMake(self.mainViewX, self.mainViewY, self.mainViewLength, self.mainViewLength);
         

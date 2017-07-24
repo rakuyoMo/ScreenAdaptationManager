@@ -9,7 +9,7 @@
 #import "BaseView.h"
 #import "FrameViewController.h"
 #import <QuartzCore/QuartzCore.h>
-#import "UIViewController+changeFrame.h"
+#import "UIView+changeFrame.h"
 
 @interface FrameViewController ()
 
@@ -67,7 +67,7 @@
 - (void)changeViewFrame{
 
     // 根据屏幕旋转方向处理视图frame.
-    [self changeViewFrameOnCrossScreen:^{
+    [self.view changeViewFrameOnCrossScreen:^{
         CGFloat viewWeight = self.view.frame.size.width;
         CGFloat viewHeight = self.view.frame.size.height;
         CGFloat flo = fabs((viewWeight - viewHeight) / 2);

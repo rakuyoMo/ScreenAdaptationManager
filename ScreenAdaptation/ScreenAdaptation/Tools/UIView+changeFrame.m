@@ -6,9 +6,9 @@
 //  Copyright © 2017年 Rakuyo. All rights reserved.
 //
 
-#import "UIViewController+changeFrame.h"
+#import "UIView+changeFrame.h"
 
-@implementation UIViewController (changeFrame)
+@implementation UIView (changeFrame)
 
 #pragma mark 处理旋转。
 

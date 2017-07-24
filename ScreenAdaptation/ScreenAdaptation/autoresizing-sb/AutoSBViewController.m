@@ -7,7 +7,7 @@
 //
 
 #import "AutoSBViewController.h"
-#import "UIViewController+changeFrame.h"
+#import "UIView+changeFrame.h"
 
 @interface AutoSBViewController ()
 
@@ -34,7 +34,7 @@
     CGFloat space = fabs( (viewHeight - viewWeight) / 2);
     
     // 根据屏幕旋转方向处理视图frame。
-    [self changeViewFrameOnCrossScreen:^{
+    [self.view changeViewFrameOnCrossScreen:^{
         self.mainView.frame = CGRectMake(space, naviBarHeight, viewHeight - naviBarHeight, viewHeight - naviBarHeight);
         
     } OrVerticalScreen:^{

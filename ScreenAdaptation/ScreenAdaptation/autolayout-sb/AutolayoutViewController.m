@@ -7,7 +7,7 @@
 //
 
 #import "AutolayoutViewController.h"
-#import "UIViewController+changeFrame.h"
+#import "UIView+changeFrame.h"
 
 @interface AutolayoutViewController ()
 
@@ -32,7 +32,7 @@
 - (void)changeViewFrame {
     
     // 根据屏幕旋转方向处理视图frame,保证mainView视图是一个正方形
-    [self changeViewFrameOnCrossScreen:^{
+    [self.view changeViewFrameOnCrossScreen:^{
         CGFloat space = (self.view.frame.size.width -  self.mainView.frame.size.height) / 2;
         self.mainViewLeft.constant = space;
         self.mainViewRight.constant = space;

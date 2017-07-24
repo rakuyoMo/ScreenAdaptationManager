@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UIViewController (changeFrame)
+@interface UIView (changeFrame)
 
 - (void)changeViewFrameOnCrossScreen:(void(^)())CrossScreen OrVerticalScreen:(void(^)())VerticalScreen;
 

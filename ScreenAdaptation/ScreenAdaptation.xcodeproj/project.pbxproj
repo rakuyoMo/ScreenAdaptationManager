@@ -20,7 +20,7 @@
 		AEF462121F25B32A00B69AA2 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF462031F25B32A00B69AA2 /* UIView+Border.m */; };
 		AEF462131F25B32A00B69AA2 /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF462061F25B32A00B69AA2 /* FrameViewController.m */; };
 		AEF462141F25B32A00B69AA2 /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF462091F25B32A00B69AA2 /* CALayer+Additions.m */; };
-		AEF462151F25B32A00B69AA2 /* UIViewController+changeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF4620B1F25B32A00B69AA2 /* UIViewController+changeFrame.m */; };
+		AEF462151F25B32A00B69AA2 /* UIView+changeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF4620B1F25B32A00B69AA2 /* UIView+changeFrame.m */; };
 		AEF4621D1F25B36200B69AA2 /* ListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF4621C1F25B36200B69AA2 /* ListTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -48,8 +48,8 @@
 		AEF462061F25B32A00B69AA2 /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
 		AEF462081F25B32A00B69AA2 /* CALayer+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Additions.h"; sourceTree = "<group>"; };
 		AEF462091F25B32A00B69AA2 /* CALayer+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Additions.m"; sourceTree = "<group>"; };
-		AEF4620A1F25B32A00B69AA2 /* UIViewController+changeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+changeFrame.h"; sourceTree = "<group>"; };
-		AEF4620B1F25B32A00B69AA2 /* UIViewController+changeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+changeFrame.m"; sourceTree = "<group>"; };
+		AEF4620A1F25B32A00B69AA2 /* UIView+changeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+changeFrame.h"; sourceTree = "<group>"; };
+		AEF4620B1F25B32A00B69AA2 /* UIView+changeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+changeFrame.m"; sourceTree = "<group>"; };
 		AEF4621B1F25B36200B69AA2 /* ListTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableViewController.h; sourceTree = "<group>"; };
 		AEF4621C1F25B36200B69AA2 /* ListTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,8 +163,8 @@
 			children = (
 				AEF462081F25B32A00B69AA2 /* CALayer+Additions.h */,
 				AEF462091F25B32A00B69AA2 /* CALayer+Additions.m */,
-				AEF4620A1F25B32A00B69AA2 /* UIViewController+changeFrame.h */,
-				AEF4620B1F25B32A00B69AA2 /* UIViewController+changeFrame.m */,
+				AEF4620A1F25B32A00B69AA2 /* UIView+changeFrame.h */,
+				AEF4620B1F25B32A00B69AA2 /* UIView+changeFrame.m */,
 			);
 			path = Tools;
 			sourceTree = "<group>";
@@ -255,7 +255,7 @@
 				AEF462131F25B32A00B69AA2 /* FrameViewController.m in Sources */,
 				AEF4621D1F25B36200B69AA2 /* ListTableViewController.m in Sources */,
 				AEF462101F25B32A00B69AA2 /* AutoSBViewController.m in Sources */,
-				AEF462151F25B32A00B69AA2 /* UIViewController+changeFrame.m in Sources */,
+				AEF462151F25B32A00B69AA2 /* UIView+changeFrame.m in Sources */,
 				AEDD8D041F218E82005942A6 /* main.m in Sources */,
 				AEF462141F25B32A00B69AA2 /* CALayer+Additions.m in Sources */,
 				AEF462121F25B32A00B69AA2 /* UIView+Border.m in Sources */,
