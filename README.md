@@ -6,7 +6,7 @@
 - [ ] 3. xib/sb创建视图，使用`autoresizing`布局。
 - [ ] 4. xib/sb创建视图，使用`autolayout`布局。
 
-## 错误修改
+    ## 错误修改
 
 - [x] 1.调整目录结构。
 - [x] 2.删掉BaseView中获取屏幕尺寸的方法，改为调用self.superView的方法。

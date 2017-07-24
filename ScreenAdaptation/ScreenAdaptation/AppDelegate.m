@@ -7,7 +7,7 @@
 //
 
 #import "AppDelegate.h"
-#import "ListTableViewController.h"
+#import "RootTableViewController.h"
 
 
 @interface AppDelegate ()
@@ -26,7 +26,7 @@
 #pragma mark - 设置根视图
 
     // list目录
-    ListTableViewController *listTableVC = [[ListTableViewController alloc] init];
+    RootTableViewController *listTableVC = [[RootTableViewController alloc] init];
     UINavigationController *naviVC = [[UINavigationController alloc] initWithRootViewController:listTableVC];
     
     self.window.rootViewController = naviVC;
