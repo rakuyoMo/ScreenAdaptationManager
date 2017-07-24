@@ -27,14 +27,14 @@
 
 @implementation FrameViewController
 
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
 #pragma mark - 初始化基础视图
-    BaseView *baseView = [BaseView sharedManager];
+    BaseView *baseView = [[BaseView alloc] initWithSuperview:self.view];
+    
     self.mainView = baseView;
     [self.view addSubview:self.mainView];
     

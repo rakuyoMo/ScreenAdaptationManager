@@ -12,16 +12,16 @@
 
 @implementation BaseView
 
-+ (instancetype)sharedManager {
-    static id instance = nil;
-    static dispatch_once_t onceToken;
-    dispatch_once(&onceToken, ^{
-        instance = [[self alloc] init];
-    });
-    return instance;
-}
+//+ (instancetype)sharedManager {
+//    static id instance = nil;
+//    static dispatch_once_t onceToken;
+//    dispatch_once(&onceToken, ^{
+//        instance = [[self alloc] initWithSuperview];
+//    });
+//    return instance;
+//}
 
-- (instancetype)init {
+- (instancetype)initWithSuperview:(UIView *)superView {
     
     if (self = [super init] ) {
         
@@ -29,7 +29,7 @@
 #pragma mark 主正方形
         self.backgroundColor = [UIColor whiteColor];
         
-        CGSize superViewOfmainView = self.superview.frame.size;
+        CGSize superViewOfmainView = superView.frame.size;
         
         self.mainViewX = 0;
         self.mainViewY = (superViewOfmainView.height - superViewOfmainView.width) / 2;

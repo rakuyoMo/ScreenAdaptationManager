@@ -22,7 +22,7 @@
 @property (nonatomic, weak) UIView *leftView;
 @property (nonatomic, weak) UIView *rightView;
 
-+ (instancetype)sharedManager;
-
+//+ (instancetype)sharedManager;
+- (instancetype)initWithSuperview:(UIView *)superView;
 
 @end
