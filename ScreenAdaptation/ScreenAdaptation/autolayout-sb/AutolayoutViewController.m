@@ -21,11 +21,15 @@
     // 保证首次进入时，mainView的形状。
     [self changeMainViewConstr];
     
-#pragma mark 监听旋转
+#pragma mark 监听旋转。
     // 监听开始旋转
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewFrame) name:UIDeviceOrientationDidChangeNotification object:nil];
-    
+}
+
+#pragma mark 移除监听。
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 #pragma mark 处理旋转。

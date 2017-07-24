@@ -27,18 +27,18 @@
 
 @implementation FrameViewController
 
+#pragma mark - 初始化基础视图
 - (void)viewDidLoad {
     [super viewDidLoad];
     
     self.view.backgroundColor = [UIColor whiteColor];
-    
-#pragma mark - 初始化基础视图
+
     BaseView *baseView = [[BaseView alloc] initWithSuperview:self.view];
     
     self.mainView = baseView;
     [self.view addSubview:self.mainView];
     
-#pragma mark - 记录视图初始坐标
+    // 记录视图初始坐标
     CGRect tempMainRec = self.mainView.frame;
     CGRect tempLeftRec = self.mainView.leftView.frame;
     CGRect tempRightRec = self.mainView.rightView.frame;
@@ -55,12 +55,14 @@
     self.childView3Rec = tempChildView3Rec;
     self.childView4Rec = tempChildView4Rec;
 
-#pragma mark - 处理屏幕旋转
-#pragma mark 监听旋转
-    
     // 监听开始旋转
     [[UIDevice currentDevice] beginGeneratingDeviceOrientationNotifications];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(changeViewFrame) name:UIDeviceOrientationDidChangeNotification object:nil];
+}
+
+#pragma mark 移除监听。
+- (void)dealloc {
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:UIDeviceOrientationDidChangeNotification object:nil];
 }
 
 #pragma mark 处理旋转。
