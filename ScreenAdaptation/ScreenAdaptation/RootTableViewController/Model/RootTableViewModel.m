@@ -10,11 +10,23 @@
 
 @implementation RootTableViewModel
 
-+ (instancetype)modelWithViewController:(UIViewController *)viewController title:(NSString *)title {
+// model数据的初始化方法。
+//+ (instancetype)modelWithViewController:(UIViewController *)viewController title:(NSString *)title {
++ (instancetype)modelWithViewController:(UIViewController *)viewController {
     
     RootTableViewModel *tableViewMod = [[RootTableViewModel alloc] init];
     
     tableViewMod.viewController = viewController;
+//    tableViewMod.title = title.copy;
+    
+    return tableViewMod;
+}
+
+// model中viewController数据的初始化方法。
++ (instancetype)modelWithTitle:(NSString *)title {
+    
+    RootTableViewModel *tableViewMod = [[RootTableViewModel alloc] init];
+    
     tableViewMod.title = title.copy;
     
     return tableViewMod;

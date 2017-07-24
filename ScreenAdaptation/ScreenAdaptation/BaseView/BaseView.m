@@ -13,21 +13,12 @@
 
 @implementation BaseView
 
-//+ (instancetype)sharedManager {
-//    static id instance = nil;
-//    static dispatch_once_t onceToken;
-//    dispatch_once(&onceToken, ^{
-//        instance = [[self alloc] initWithSuperview];
-//    });
-//    return instance;
-//}
-
+#pragma mark - 基础视图设置。
 - (instancetype)initWithSuperview:(UIView *)superView {
 
     if (self = [super init] ) {
         
-#pragma mark - 基础视图设置。
-#pragma mark 主正方形
+        // 主正方形。
         self.backgroundColor = [UIColor whiteColor];
         
         CGSize superViewOfmainView = superView.frame.size;
@@ -50,8 +41,7 @@
         // 设置边框、圆角
         [self borderViewInColor:purple];
         
-#pragma mark 内视图
-        
+        // 内视图。
         // 创建四个子视图，并设置四个子视图的frame
         CGFloat baseS = 10;
         CGFloat baseX = 10;

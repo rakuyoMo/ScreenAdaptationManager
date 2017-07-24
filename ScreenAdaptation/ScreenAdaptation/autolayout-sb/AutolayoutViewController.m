@@ -39,10 +39,6 @@
     } OrVerticalScreen:^{
         [self changeMainViewConstr];
     }];
-    
-    
-    
-    
 }
 
 - (void)changeMainViewConstr {
@@ -50,7 +46,5 @@
     self.mainViewTop.constant = space - self.navigationController.navigationBar.frame.size.height - 14;
     self.mainViewBottom.constant = space;
 }
-
-
 
 @end

@@ -17,48 +17,88 @@
 
 @interface RootTableViewController ()
 
-@property(nonatomic, strong)NSMutableArray *dataModelArrM;
+@property(nonatomic, strong)NSMutableArray *titleModelArrM;
+@property(nonatomic, strong)NSMutableArray *viewContModelArrM;
+//@property(nonatomic, strong)NSMutableArray *dataModelArrM;
 
 @end
 
 @implementation RootTableViewController
 
-    
-- (NSMutableArray *)dataModelArrM {
-    
-    if (!_dataModelArrM) {
-        // Frame
-        FrameViewController *frameVC = [[FrameViewController alloc] init];
-        RootTableViewModel *frameModel = [RootTableViewModel modelWithViewController:frameVC title:@"纯代码创建视图，使用frame布局"];
+// dataModelArrM的set方法。
+//- (NSMutableArray *)dataModelArrM {
+//
+//    if (!_dataModelArrM) {
+//
+//        self.dataModelArrM = [NSMutableArray arrayWithObjects:self.titleModelArrM, self.viewContModelArrM, nil];
+//
+//        RootTableViewModel *frameModel = [RootTableViewModel modelWithViewController:frameVC title:@"纯代码创建视图，使用frame布局"];
+//
+//        RootTableViewModel *autoresModel = [RootTableViewModel modelWithViewController:autoresVC title:@"纯代码创建视图，使用autoresizing布局"];
+//
+//        RootTableViewModel *autoSBModel = [RootTableViewModel modelWithViewController:autoSBVC title:@"sb创建视图,使用autoresizing布局"];
+//
+//        RootTableViewModel *autolayoutModel = [RootTableViewModel modelWithViewController:autolayoutVC title:@"sb创建视图，使用autolayout布局"];
+//
+//        self.dataModelArrM = [NSMutableArray arrayWithObjects:frameModel, autoresModel, autoSBModel, autolayoutModel, nil];
+//    }
+//
+//    return _dataModelArrM;
+//}
+
+// viewContModelArrM的set方法。
+- (NSMutableArray *)viewContModelArrM {
+    if (!_viewContModelArrM) {
         
+        // frame
+        FrameViewController *frameVC = [[FrameViewController alloc] init];
+        RootTableViewModel *frameVCModel = [RootTableViewModel modelWithViewController:frameVC];
+
         // autoresizing
         AutoresizingViewController *autoresVC = [[AutoresizingViewController alloc] init];
-        RootTableViewModel *autoresModel = [RootTableViewModel modelWithViewController:autoresVC title:@"纯代码创建视图，使用autoresizing布局"];
-        
+        RootTableViewModel *autoresVCModel = [RootTableViewModel modelWithViewController:autoresVC];
+
         // autoresizingSB
         AutoSBViewController *autoSBVC = [[UIStoryboard storyboardWithName:@"Autoresizing" bundle:nil] instantiateViewControllerWithIdentifier:@"Autoresizing"];
-        RootTableViewModel *autoSBModel = [RootTableViewModel modelWithViewController:autoSBVC title:@"sb创建视图,使用autoresizing布局"];
-        
+        RootTableViewModel *autoSBVCModel = [RootTableViewModel modelWithViewController:autoSBVC];
+
         // autolayout
         AutolayoutViewController *autolayoutVC = [[UIStoryboard storyboardWithName:@"Autolayout" bundle:nil] instantiateViewControllerWithIdentifier:@"Autolayout"];
-        RootTableViewModel *autolayoutModel = [RootTableViewModel modelWithViewController:autolayoutVC title:@"sb创建视图，使用autolayout布局"];
-        
+        RootTableViewModel *autolayVCModel = [RootTableViewModel modelWithViewController:autolayoutVC];
+
         // 将数据模型放入可变数组中存储。方便调用。
-        self.dataModelArrM = [NSMutableArray arrayWithObjects:frameModel, autoresModel, autoSBModel, autolayoutModel, nil];
+        self.viewContModelArrM = [NSMutableArray arrayWithObjects:frameVCModel, autoresVCModel, autoSBVCModel, autolayVCModel, nil];
     }
-    return _dataModelArrM;
+    return _viewContModelArrM;
+}
+
+// titleModelArrM的set方法。
+- (NSMutableArray *)titleModelArrM {
+    
+    if (!_titleModelArrM) {
+        // Frame
+        RootTableViewModel *frameTitleModel = [RootTableViewModel modelWithTitle:@"纯代码创建视图，使用frame布局"];
+        
+        // autoresizing
+        RootTableViewModel *autoresTitleModel = [RootTableViewModel modelWithTitle:@"纯代码创建视图，使用autoresizing布局"];
+        
+        // autoresizingSB
+        RootTableViewModel *autoSBTitleModel = [RootTableViewModel modelWithTitle:@"sb创建视图,使用autoresizing布局"];
+        
+        // autolayout
+        RootTableViewModel *autolayTitleModel = [RootTableViewModel modelWithTitle:@"sb创建视图，使用autolayout布局"];
+
+        // 将数据模型放入可变数组中存储。方便调用。
+        self.titleModelArrM = [NSMutableArray arrayWithObjects:frameTitleModel, autoresTitleModel, autoSBTitleModel, autolayTitleModel, nil];
+
+    }
+    return _titleModelArrM;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    UITableView *listTableView = [[UITableView alloc] init];
-    listTableView.delegate = self;
-    listTableView.dataSource = self;
-    
     self.navigationItem.title = @"屏幕适配";
-
-    [self.view addSubview:listTableView];
 }
 
 #pragma mark - Table view data source
@@ -72,7 +112,7 @@
 // 一组几行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return self.dataModelArrM.count;
+    return self.viewContModelArrM.count;
 }
 
 
@@ -89,10 +129,7 @@
     }
     
     // 设置模型数据。
-    cell.tableViewCellModel = self.dataModelArrM[indexPath.row];
-    
-    // 显示小箭头
-//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    cell.tableViewCellModel = self.titleModelArrM[indexPath.row];
 
     return cell;
 }
@@ -100,8 +137,8 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // 设置点击跳转。
-    RootTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
-    [self.navigationController pushViewController:cell.tableViewCellModel.viewController animated:YES];
+    RootTableViewModel *vcModel = self.viewContModelArrM[indexPath.row];
+    [self.navigationController pushViewController:vcModel.viewController animated:YES];
 }
 
 
