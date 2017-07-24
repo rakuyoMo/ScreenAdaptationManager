@@ -17,7 +17,7 @@
 
 @interface RootTableViewController ()
 
-@property(nonatomic, weak)NSMutableArray<RootTableViewModel *> *dataModelArrM;
+@property(nonatomic, strong)NSMutableArray *dataModelArrM;
 
 @end
 
@@ -44,9 +44,7 @@
         RootTableViewModel *autolayoutModel = [RootTableViewModel modelWithViewController:autolayoutVC title:@"sb创建视图，使用autolayout布局"];
         
         // 将数据模型放入可变数组中存储。方便调用。
-        _dataModelArrM = [NSMutableArray arrayWithObjects:frameModel, autoresModel, autoSBModel, autolayoutModel, nil];
-        
-//        _dataModelArrM = [NSMutableArray arrayWithArray:@[frameModel, autoresModel, autoSBModel, autolayoutModel]];
+        self.dataModelArrM = [NSMutableArray arrayWithObjects:frameModel, autoresModel, autoSBModel, autolayoutModel, nil];
     }
     return _dataModelArrM;
 }
@@ -93,10 +91,8 @@
     // 设置模型数据。
     cell.tableViewCellModel = self.dataModelArrM[indexPath.row];
     
-    NSLog(@"%@",self.dataModelArrM[indexPath.row].viewController);
-    
     // 显示小箭头
-    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     return cell;
 }

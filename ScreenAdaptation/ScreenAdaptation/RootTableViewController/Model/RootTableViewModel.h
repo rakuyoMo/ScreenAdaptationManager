@@ -10,8 +10,8 @@
 
 @interface RootTableViewModel : NSObject
 
-@property(nonatomic, weak)UIViewController *viewController;
-@property(nonatomic, weak)NSString *title;
+@property(nonatomic, strong)UIViewController *viewController;
+@property(nonatomic, strong)NSString *title;
 
 + (instancetype)modelWithViewController:(UIViewController *)viewController title:(NSString *)title;
 

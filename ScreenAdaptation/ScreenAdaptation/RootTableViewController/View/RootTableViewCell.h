@@ -12,6 +12,6 @@
 @interface RootTableViewCell : UITableViewCell
 
 // 单个cell的model
-@property(nonatomic, weak)RootTableViewModel *tableViewCellModel;
+@property(nonatomic, strong)RootTableViewModel *tableViewCellModel;
 
 @end

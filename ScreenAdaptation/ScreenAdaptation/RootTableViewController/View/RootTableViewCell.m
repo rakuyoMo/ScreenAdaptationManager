@@ -10,6 +10,14 @@
 
 @implementation RootTableViewCell
 
+- (instancetype)init {
+    if (self = [super init]) {
+        self.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    }
+    
+    return self;
+}
+
 // 自定义rootTableViewModel属性的set方法，进行赋值。
 - (void)setTableViewCellModel:(RootTableViewModel *) rootTableViewModel{
     

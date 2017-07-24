@@ -16,7 +16,7 @@
     - [ ] 4.5 考虑尝试封装监听。
 - [ ] 5.重新理解autolayout，修改视图约束。
 - [ ] 6.解决任务3中，当界面初始为横屏时，BaveView位置错误的问题。
-- [ ] 7.封装ListTableViewController中的数据源。
+- [x] 7.封装ListTableViewController中的数据源。
     - [ ] 7.5 将控制器初始化放在点击跳转中。
 
 ## 相关笔记
