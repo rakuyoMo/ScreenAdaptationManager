@@ -6,14 +6,14 @@
 //  Copyright © 2017年 Rakuyo. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "FrameCodeView.h"
 #import "UIView+Border.h"
 
 #if !defined(MAINSCRSIZE)
 #define MAINSCRSIZE [[UIScreen mainScreen] bounds].size
 #endif
 
-@interface BaseView ()
+@interface FrameCodeView ()
 
 #pragma mark - 视图坐标属性。
 @property(nonatomic, assign) CGFloat mainViewX;
@@ -32,9 +32,9 @@
 
 @end
 
-@implementation BaseView
+@implementation FrameCodeView
 
-#pragma mark - 初始化BaseView，并为其添加样式。
+#pragma mark - 初始化FrameCodeView，并为其添加样式。
 - (instancetype)init {
 
     if (self = [super init]) {

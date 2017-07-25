@@ -6,14 +6,12 @@
 //  Copyright © 2017年 Rakuyo. All rights reserved.
 //
 
-#import "BaseView.h"
+#import "FrameCodeView.h"
 #import "FrameViewController.h"
-#import <QuartzCore/QuartzCore.h>
-#import "UIView+changeFrame.h"
 
 @interface FrameViewController ()
 
-@property (nonatomic, weak) BaseView *mainView;
+@property (nonatomic, weak) FrameCodeView *mainView;
 
 @end
 
@@ -35,7 +33,7 @@
     self.view.backgroundColor = [UIColor whiteColor];
     
     // 初始化BaseView。
-    BaseView *baseView = [[BaseView alloc] init];
+    FrameCodeView *baseView = [[FrameCodeView alloc] init];
     self.mainView = baseView;
     [self.view addSubview:self.mainView];
 }

@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BaseView : UIView
+@interface FrameCodeView : UIView
 
 // 设置视图Frame。
 - (void)frameWithSize:(CGSize)size;

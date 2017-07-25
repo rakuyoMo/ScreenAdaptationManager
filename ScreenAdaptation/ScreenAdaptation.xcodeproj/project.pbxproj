@@ -22,8 +22,9 @@
 		AEF9A2101F272DFB006E1B15 /* CALayer+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A2091F272DFB006E1B15 /* CALayer+Additions.m */; };
 		AEF9A2111F272DFB006E1B15 /* UIView+Border.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A20C1F272DFB006E1B15 /* UIView+Border.m */; };
 		AEF9A2121F272DFB006E1B15 /* UIView+changeFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A20F1F272DFB006E1B15 /* UIView+changeFrame.m */; };
-		AEF9A21A1F272E0C006E1B15 /* BaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A2161F272E0C006E1B15 /* BaseView.m */; };
+		AEF9A21A1F272E0C006E1B15 /* FrameCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A2161F272E0C006E1B15 /* FrameCodeView.m */; };
 		AEF9A21B1F272E0C006E1B15 /* FrameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A2191F272E0C006E1B15 /* FrameViewController.m */; };
+		AEF9A21E1F27358A006E1B15 /* AoturesizingCodeView.m in Sources */ = {isa = PBXBuildFile; fileRef = AEF9A21D1F27358A006E1B15 /* AoturesizingCodeView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,10 +55,12 @@
 		AEF9A20C1F272DFB006E1B15 /* UIView+Border.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Border.m"; sourceTree = "<group>"; };
 		AEF9A20E1F272DFB006E1B15 /* UIView+changeFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+changeFrame.h"; sourceTree = "<group>"; };
 		AEF9A20F1F272DFB006E1B15 /* UIView+changeFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+changeFrame.m"; sourceTree = "<group>"; };
-		AEF9A2151F272E0C006E1B15 /* BaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseView.h; sourceTree = "<group>"; };
-		AEF9A2161F272E0C006E1B15 /* BaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseView.m; sourceTree = "<group>"; };
+		AEF9A2151F272E0C006E1B15 /* FrameCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameCodeView.h; sourceTree = "<group>"; };
+		AEF9A2161F272E0C006E1B15 /* FrameCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameCodeView.m; sourceTree = "<group>"; };
 		AEF9A2181F272E0C006E1B15 /* FrameViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FrameViewController.h; sourceTree = "<group>"; };
 		AEF9A2191F272E0C006E1B15 /* FrameViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FrameViewController.m; sourceTree = "<group>"; };
+		AEF9A21C1F27358A006E1B15 /* AoturesizingCodeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AoturesizingCodeView.h; sourceTree = "<group>"; };
+		AEF9A21D1F27358A006E1B15 /* AoturesizingCodeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AoturesizingCodeView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,8 +77,8 @@
 		AE8A590D1F25D1BA0072A57D /* Aoturesizing-Code */ = {
 			isa = PBXGroup;
 			children = (
-				AEF9A2021F272D9A006E1B15 /* ViewController */,
 				AEF9A2011F272D9A006E1B15 /* View */,
+				AEF9A2021F272D9A006E1B15 /* ViewController */,
 			);
 			path = "Aoturesizing-Code";
 			sourceTree = "<group>";
@@ -103,9 +106,9 @@
 		AE8A592A1F25D26A0072A57D /* RootTableViewController */ = {
 			isa = PBXGroup;
 			children = (
-				AE8A592B1F25D26A0072A57D /* Controller */,
 				AE8A592E1F25D26A0072A57D /* Model */,
 				AE8A59311F25D26A0072A57D /* View */,
+				AE8A592B1F25D26A0072A57D /* Controller */,
 			);
 			path = RootTableViewController;
 			sourceTree = "<group>";
@@ -183,6 +186,8 @@
 		AEF9A2011F272D9A006E1B15 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AEF9A21C1F27358A006E1B15 /* AoturesizingCodeView.h */,
+				AEF9A21D1F27358A006E1B15 /* AoturesizingCodeView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -236,8 +241,8 @@
 		AEF9A2131F272E0C006E1B15 /* Frame-Code */ = {
 			isa = PBXGroup;
 			children = (
-				AEF9A2171F272E0C006E1B15 /* ViewController */,
 				AEF9A2141F272E0C006E1B15 /* View */,
+				AEF9A2171F272E0C006E1B15 /* ViewController */,
 			);
 			path = "Frame-Code";
 			sourceTree = "<group>";
@@ -245,8 +250,8 @@
 		AEF9A2141F272E0C006E1B15 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AEF9A2151F272E0C006E1B15 /* BaseView.h */,
-				AEF9A2161F272E0C006E1B15 /* BaseView.m */,
+				AEF9A2151F272E0C006E1B15 /* FrameCodeView.h */,
+				AEF9A2161F272E0C006E1B15 /* FrameCodeView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -343,8 +348,9 @@
 				AEF9A2051F272D9A006E1B15 /* AutoresizingViewController.m in Sources */,
 				AEF9A21B1F272E0C006E1B15 /* FrameViewController.m in Sources */,
 				AE8A59331F25D26A0072A57D /* RootTableViewModel.m in Sources */,
+				AEF9A21E1F27358A006E1B15 /* AoturesizingCodeView.m in Sources */,
 				AEF9A2111F272DFB006E1B15 /* UIView+Border.m in Sources */,
-				AEF9A21A1F272E0C006E1B15 /* BaseView.m in Sources */,
+				AEF9A21A1F272E0C006E1B15 /* FrameCodeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

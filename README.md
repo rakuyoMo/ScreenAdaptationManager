@@ -21,7 +21,7 @@
 - [x] 9.检查除任务2外，剩下3个任务，在快速横屏过程中会出现视图大小错误的问题。
 - [x] 10.将旋转监听改为viewDidLayoutSubviews和layoutSubviews。
 - [x] 11.重新理解在storyboard中使用Autoresizing，修改视图约束。
-- [ ] 12.将BaseView拆分开来，即在Frame-Code和Autoresizing-Code中不再共用一个BaseView视图。
+- [x] 12.将BaseView拆分开来，即在Frame-Code和Autoresizing-Code中不再共用一个BaseView视图。
 - [ ] 13.在任务2中，将4个子视图全部用Autoresizing方法布局。
 
 ## 相关笔记
