@@ -10,6 +10,6 @@
 
 @interface UIView (Border)
 
-- (void)borderViewInColor:(CGColorRef)color;
+- (void)borderViewInColor:(UIColor *)color;
 
 @end

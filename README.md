@@ -1,7 +1,7 @@
 # ScreenAdaptation
 ## 屏幕适配项目目标:
  采用以下四种方法进行屏幕适配：
-- [ ] 1. 纯代码创建5个视图，使用`frame`布局。
+- [x] 1. 纯代码创建5个视图，使用`frame`布局。
 - [x] 2. 纯代码创建5个视图，使用`autoresizing`布局。
 - [ ] 3. xib/sb创建视图，使用`autoresizing`布局。
 - [ ] 4. xib/sb创建视图，使用`autolayout`布局。
@@ -11,16 +11,16 @@
 - [x] 1.调整目录结构。
 - [x] 2.删掉BaseView中获取屏幕尺寸的方法，改为调用self.superView的方法。
     - [x] 2.5 解决掉2后出来的新问题:初始为横屏时，图形位置有问题。
-- [ ] 3.封装BaseView中暴露的内部属性。
+- [x] 3.封装BaseView中暴露的内部属性。
 - [x] 4.为所有添加旋转监听的地方设置取消监听。
-    - [ ] 4.5 考虑尝试封装监听。——需要补一下生命周期的知识。
-- [ ] 5.重新理解autolayout，修改视图约束。
+- [ ] 5.重新理解在storyboard中使用autolayout，修改视图约束。
 - [x] 6.解决任务3中，当界面初始为横屏时，BaveView位置错误的问题。
 - [x] 7.封装ListTableViewController中的数据源。
     - [x] 7.5 将控制器初始化放在点击跳转中。
-- [ ] 8.修改BaseView下的4个子视图的Frame设置，使其具有可变性，以防未来需求变动。
-- [ ] 9.检查除任务2外，剩下3个任务，在快速横屏过程中会出现视图大小错误的问题。
-- [ ] 10.将旋转监听改为viewDidLayoutSubviews和layoutSubviews。
+- [x] 8.修改BaseView下的4个子视图的Frame设置，使其具有可变性，以防未来需求变动。
+- [x] 9.检查除任务2外，剩下3个任务，在快速横屏过程中会出现视图大小错误的问题。
+- [x] 10.将旋转监听改为viewDidLayoutSubviews和layoutSubviews。
+- [ ] 11.重新理解在storyboard中使用Autoresizing，修改视图约束。
 
 ## 相关笔记
 

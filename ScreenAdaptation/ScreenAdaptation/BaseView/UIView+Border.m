@@ -10,13 +10,15 @@
 
 @implementation UIView (Border)
 
-- (void)borderViewInColor:(CGColorRef)color {
+- (void)borderViewInColor:(UIColor *)color {
     // 圆角
     self.layer.cornerRadius = 10;
     // 边框宽度不用加单位
     self.layer.borderWidth = 5;
     // 设置边框颜色
-    self.layer.borderColor = color;
+    // (__bridge CGColorRef _Nullable) 桥接，仅仅作为类型转换
+    CGColorRef tempColor = (__bridge CGColorRef _Nullable)((__bridge id)color.CGColor);
+    self.layer.borderColor = tempColor;
 }
 
 @end
