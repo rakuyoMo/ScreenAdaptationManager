@@ -13,4 +13,7 @@
 // 设置视图Frame。
 - (void)frameWithSize:(CGSize)size;
 
+//封装设置AutoresizingMask的方法。
+- (void)autoresizingMaskOfChildView:(NSMutableArray<NSNumber *> *(^)())autoMaskArr;
+
 @end

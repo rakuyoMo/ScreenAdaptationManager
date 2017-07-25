@@ -112,6 +112,7 @@
 // 一组几行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
+#warning 这里调用viewContModelArrM.count而不是调用titleModelArrM.count也没事。控制器并不会被初始化。
     return self.viewContModelArrM.count;
 }
 
