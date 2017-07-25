@@ -1,5 +1,5 @@
 //
-//  AutolayoutViewController.h
+//  UIView+Border.h
 //  ScreenAdaptation
 //
 //  Created by Rakuyo on 2017/7/21.
@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AutolayoutViewController : UIViewController
+@interface UIView (Border)
 
+- (void)borderViewInColor:(UIColor *)color;
 
 @end

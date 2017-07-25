@@ -9,8 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface AutoSBViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIView *mainView;
-
 
 @end
 

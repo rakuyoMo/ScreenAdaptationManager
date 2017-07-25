@@ -1,5 +1,5 @@
 //
-//  AutolayoutViewController.h
+//  BaseView.h
 //  ScreenAdaptation
 //
 //  Created by Rakuyo on 2017/7/21.
@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface AutolayoutViewController : UIViewController
+@interface BaseView : UIView
 
+// 设置视图Frame。
+- (void)frameWithSize:(CGSize)size;
 
 @end
