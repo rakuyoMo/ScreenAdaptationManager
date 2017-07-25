@@ -13,6 +13,8 @@
 #define MAINSCRSIZE [[UIScreen mainScreen] bounds].size
 #endif
 
+
+
 @interface AoturesizingCodeView ()
 
 #pragma mark - 视图坐标属性。
@@ -91,19 +93,9 @@
 - (void)frameWithSize:(CGSize)size {
     
     // 初始化第一次进入视图时View的Frame。
-    UIDeviceOrientation orien = [UIDevice currentDevice].orientation;
-    
-    // 减去横屏时屏幕顶端的NaviBar
-    if (orien == UIDeviceOrientationLandscapeLeft || orien == UIDeviceOrientationLandscapeRight ) {
-#warning 横屏时候，这里在plus下，naviBar的高度是44，iPhone 7下是32.
-        self.mainViewWidth = size.width - 32;
-        self.mainViewHeight = size.height - 32;
-        self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5 + 32;
-    } else {
-        self.mainViewWidth = size.width;
-        self.mainViewHeight = size.height;
-        self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5;
-    }
+    self.mainViewWidth = size.width;
+    self.mainViewHeight = size.height;
+    self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5;
     self.mainViewX = fabs(MAINSCRSIZE.width - size.width) * 0.5;
     
     self.frame = CGRectMake(self.mainViewX, self.mainViewY, self.mainViewWidth, self.mainViewHeight);
@@ -154,7 +146,7 @@
     // 设置左下视图的AutoresizingMask
     self.leftLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
     // 设置右上视图的AutoresizingMask
-    self.rightUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
+    self.rightUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
     // 设置右下视图的AutoresizingMask
     self.rightLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
 }

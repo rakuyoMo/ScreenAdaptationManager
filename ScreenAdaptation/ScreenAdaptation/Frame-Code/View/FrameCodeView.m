@@ -95,10 +95,23 @@
     
     // 减去横屏时屏幕顶端的NaviBar
     if (orien == UIDeviceOrientationLandscapeLeft || orien == UIDeviceOrientationLandscapeRight ) {
-#warning 横屏时候，这里在plus下，naviBar的高度是44，iPhone 7下是32.
-        self.mainViewWidth = size.width - 32;
-        self.mainViewHeight = size.height - 32;
-        self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5 + 32;
+        
+#warning 减去NaviBar的方法老实说，这么做不太满意。
+        // 老实说这个样子做好像不太好。
+        // 但是如果只传宽高的话只能这么弄，在View里判断屏幕尺寸。
+        // 如果不只传宽高，那么可以再VC里的viewDidLayoutSubviews里获取Bar的高度，剪掉之后直接作为Y值传过来，设置View的Frame。
+        // 至于这两种方法哪种更好.....就不太清楚了。
+        int naviBarH = 0;
+        if (MAINSCRSIZE.height >= 414) {
+            naviBarH = 44;
+        } else {
+            naviBarH = 32;
+        }
+        
+        // 横屏时候，这里在plus下，naviBar的高度是44，iPhone 7下是32.
+        self.mainViewWidth = size.width - naviBarH;
+        self.mainViewHeight = size.height - naviBarH;
+        self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5 + naviBarH;
     } else {
         self.mainViewWidth = size.width;
         self.mainViewHeight = size.height;
