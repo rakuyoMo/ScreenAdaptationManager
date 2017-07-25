@@ -17,36 +17,27 @@
 
 @interface RootTableViewController ()
 
-@property(nonatomic, strong)NSMutableArray *titleModelArrM;
-@property(nonatomic, strong)NSMutableArray *viewContModelArrM;
-//@property(nonatomic, strong)NSMutableArray *dataModelArrM;
+@property(nonatomic, strong)NSMutableArray<RootTableViewModel *> *titleModelArrM;
+@property(nonatomic, strong)NSMutableArray<RootTableViewModel *> *viewContModelArrM;
+@property(nonatomic, strong)NSMutableArray<NSMutableArray *> *dataArrM;
 
 @end
 
 @implementation RootTableViewController
 
-// dataModelArrM的set方法。
-//- (NSMutableArray *)dataModelArrM {
-//
-//    if (!_dataModelArrM) {
-//
-//        self.dataModelArrM = [NSMutableArray arrayWithObjects:self.titleModelArrM, self.viewContModelArrM, nil];
-//
-//        RootTableViewModel *frameModel = [RootTableViewModel modelWithViewController:frameVC title:@"纯代码创建视图，使用frame布局"];
-//
-//        RootTableViewModel *autoresModel = [RootTableViewModel modelWithViewController:autoresVC title:@"纯代码创建视图，使用autoresizing布局"];
-//
-//        RootTableViewModel *autoSBModel = [RootTableViewModel modelWithViewController:autoSBVC title:@"sb创建视图,使用autoresizing布局"];
-//
-//        RootTableViewModel *autolayoutModel = [RootTableViewModel modelWithViewController:autolayoutVC title:@"sb创建视图，使用autolayout布局"];
-//
-//        self.dataModelArrM = [NSMutableArray arrayWithObjects:frameModel, autoresModel, autoSBModel, autolayoutModel, nil];
-//    }
-//
-//    return _dataModelArrM;
-//}
+// dataArrM的get方法。
+- (NSMutableArray *)dataArrM {
+    if (!_dataArrM) {
+        
+        // 将title添加到dataArryM数组中。
+        NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:self.titleModelArrM, nil];
+        
+        _dataArrM = tempArr;
+    }
+    return _dataArrM;
+}
 
-// viewContModelArrM的set方法。
+// viewContModelArrM的get方法。
 - (NSMutableArray *)viewContModelArrM {
     if (!_viewContModelArrM) {
         
@@ -67,12 +58,12 @@
         RootTableViewModel *autolayVCModel = [RootTableViewModel modelWithViewController:autolayoutVC];
 
         // 将数据模型放入可变数组中存储。方便调用。
-        self.viewContModelArrM = [NSMutableArray arrayWithObjects:frameVCModel, autoresVCModel, autoSBVCModel, autolayVCModel, nil];
+        _viewContModelArrM = [NSMutableArray arrayWithObjects:frameVCModel, autoresVCModel, autoSBVCModel, autolayVCModel, nil];
     }
     return _viewContModelArrM;
 }
 
-// titleModelArrM的set方法。
+// titleModelArrM的get方法。
 - (NSMutableArray *)titleModelArrM {
     
     if (!_titleModelArrM) {
@@ -102,7 +93,6 @@
 }
 
 #pragma mark - Table view data source
-
 // 显示几组
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -112,8 +102,7 @@
 // 一组几行
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-#warning 这里调用viewContModelArrM.count而不是调用titleModelArrM.count也没事。控制器并不会被初始化。
-    return self.viewContModelArrM.count;
+    return self.dataArrM[0].count;
 }
 
 
@@ -124,23 +113,28 @@
     
     // 重用cell
     RootTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdent];
-
+    
     if (cell == nil) {
         cell = [[RootTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellIdent];
     }
     
     // 设置模型数据。
-    cell.tableViewCellModel = self.titleModelArrM[indexPath.row];
+    [cell setTableViewCellArrM:self.dataArrM WithIndexPathRow:indexPath.row];
 
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // 设置点击跳转。
-    RootTableViewModel *vcModel = self.viewContModelArrM[indexPath.row];
+    // 将VCModel添加到data数组中。
+    [self.dataArrM addObject:self.viewContModelArrM];
+    
+    // 根据indexPath获取到对应Cell。
+    RootTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    // 从Cell的data数组中取出VCModel，设置点击跳转。
+    RootTableViewModel *vcModel = cell.tableViewCellArrM[1][indexPath.row];
     [self.navigationController pushViewController:vcModel.viewController animated:YES];
 }
-
 
 @end

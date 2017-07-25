@@ -8,6 +8,7 @@
 
 #import "RootTableViewCell.h"
 
+
 @implementation RootTableViewCell
 
 // 重写cell的初始化方法。
@@ -20,11 +21,13 @@
     return self;
 }
 
-// 自定义rootTableViewModel属性的set方法，进行赋值。
-- (void)setTableViewCellModel:(RootTableViewModel *) rootTableViewModel{
+// 对self.tableViewCellArrM进行赋值。
+- (void)setTableViewCellArrM:(NSMutableArray<NSMutableArray *> *)tableViewCellArrM WithIndexPathRow:(NSInteger)row{
+
+    _tableViewCellArrM = tableViewCellArrM;
     
-//    _tableViewCellModel = rootTableViewModel;
-    self.textLabel.text = rootTableViewModel.title;
+    RootTableViewModel *tempModel = tableViewCellArrM[0][row];
+    self.textLabel.text = tempModel.title;
 }
 
 @end
