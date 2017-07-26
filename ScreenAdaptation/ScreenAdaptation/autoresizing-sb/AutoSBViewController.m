@@ -10,9 +10,4 @@
 
 @implementation AutoSBViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-
-}
-
 @end

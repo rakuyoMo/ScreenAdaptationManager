@@ -10,8 +10,6 @@
 
 @interface AoturesizingCodeView : UIView
 
-typedef NSMutableArray<NSNumber *> *(^ParaBlock)();
-
 // 设置视图Frame。
 - (void)frameWithSize:(CGSize)size;
 

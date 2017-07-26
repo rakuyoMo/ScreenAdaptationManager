@@ -17,8 +17,11 @@
 
 @interface RootTableViewController ()
 
+// cell中title的Model
 @property(nonatomic, strong)NSMutableArray<RootTableViewModel *> *titleModelArrM;
+// cell中跳转的ViewController的Model
 @property(nonatomic, strong)NSMutableArray<RootTableViewModel *> *viewContModelArrM;
+// 可变数组，用来整合titleModel和ViewController的Model。
 @property(nonatomic, strong)NSMutableArray<NSMutableArray *> *dataArrM;
 
 @end
@@ -81,7 +84,6 @@
 
         // 将数据模型放入可变数组中存储。方便调用。
         self.titleModelArrM = [NSMutableArray arrayWithObjects:frameTitleModel, autoresTitleModel, autoSBTitleModel, autolayTitleModel, nil];
-
     }
     return _titleModelArrM;
 }
@@ -119,7 +121,6 @@
     
     // 设置模型数据。
     [cell setTableViewCellArrM:self.dataArrM WithIndexPathRow:indexPath.row];
-//    [cell setTableViewCellArrM:self.dataArrM WithIndexPathRow:indexPath.row];
 
     return cell;
 }

@@ -44,12 +44,14 @@
         // 创建左视图
         UIView *leftView = [[UIView alloc] init];
         self.leftView = leftView;
+        self.leftView.backgroundColor = [UIColor blackColor];
         // 将二级视图加入BaseView主视图。
         [self addSubview:self.leftView];
         
         // 创建右视图，和左视图方法相同。
         UIView *rightView = [[UIView alloc] init];
         self.rightView = rightView;
+        self.rightView.backgroundColor = [UIColor redColor];
         [self addSubview:self.rightView];
         
         // 创建4个子视图
@@ -108,13 +110,12 @@
     CGFloat baseW = leftViewSize.width - baseX - baseS;
     CGFloat baseH = (leftViewSize.height * 0.5) - baseY - baseS;
     
-    // 左上子视图frame
+    // 左上、右上子视图frame
     self.leftUpperView.frame = CGRectMake(baseX, baseY, baseW, baseH);
-    // 左下子视图frame
-    self.leftLowerView.frame = CGRectMake(baseX, baseY * 2 + baseH, baseW, baseH);
-    // 右上子视图frame
     self.rightUpperView.frame = CGRectMake(baseS, baseY, baseW, baseH);
-    // 右下子视图frame
+    
+    // 左下、右下子视图frame
+    self.leftLowerView.frame = CGRectMake(baseX, baseY * 2 + baseH, baseW, baseH);
     self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 +baseH, baseW, baseH);
 }
 
@@ -124,18 +125,17 @@
     // 接收block的返回值。
     NSMutableArray *tempArrM = [NSMutableArray arrayWithArray:autoMaskArr()];
     
-    // 设置左视图的AutoresizingMask
+    // 设置左、右视图的AutoresizingMask
     self.leftView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
-    // 设置右视图的AutoresizingMask
-    self.rightView.autoresizingMask = (UIViewAutoresizing)[tempArrM[1] unsignedIntegerValue];
-    // 设置左上视图的AutoresizingMask
-    self.leftUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
-    // 设置左下视图的AutoresizingMask
-    self.leftLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[3] unsignedIntegerValue];
-    // 设置右上视图的AutoresizingMask
-    self.rightUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
-    // 设置右下视图的AutoresizingMask
-    self.rightLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[3] unsignedIntegerValue];
+    self.rightView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
+    
+    // 设置左上、右上视图的AutoresizingMask
+    self.leftUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[1] unsignedIntegerValue];
+    self.rightUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[1] unsignedIntegerValue];
+    
+    // 设置左下、右下视图的AutoresizingMask
+    self.leftLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
+    self.rightLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
 }
 
 @end

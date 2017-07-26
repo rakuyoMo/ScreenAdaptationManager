@@ -12,6 +12,4 @@
 
 - (void)changeViewFrameOnCrossScreen:(void(^)())CrossScreen OrVerticalScreen:(void(^)())VerticalScreen;
 
-
-
 @end

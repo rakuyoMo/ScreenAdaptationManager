@@ -22,7 +22,7 @@
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    // 初始化BaseView，
+    // 初始化BaseView，并设置autoresizing约束。
     self.mainView = [self autoresizingMastWithView];
     
     // 设置的样式和Frame。
@@ -33,6 +33,7 @@
     [self.view addSubview:self.mainView];
 }
 
+// 初始化BaseView，并设置autoresizing约束。
 - (AoturesizingCodeView *)autoresizingMastWithView {
     
     AoturesizingCodeView *aoturesView = [[AoturesizingCodeView alloc] init];
@@ -44,31 +45,26 @@
     // 设置子视图的Autoresizing约束。
     [aoturesView autoresizingMaskOfChildView:^NSMutableArray *{
 
-        // 左视图约束。
-        UIViewAutoresizing leftViewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleLeftMargin | UIStackViewAlignmentTop | UIStackViewAlignmentBottom;
-        NSNumber *leftNum = [NSNumber numberWithInt:leftViewAutores];
-        
-        // 右视图约束。
-        UIViewAutoresizing rightViewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleRightMargin | UIStackViewAlignmentTop | UIStackViewAlignmentBottom;
-        NSNumber *rightNum = [NSNumber numberWithInt:rightViewAutores];
+        // 左、右视图约束。
+        UIViewAutoresizing viewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
+        NSNumber *num = [NSNumber numberWithInt:viewAutores];
         
         // 左上&&右上视图约束。
-        UIViewAutoresizing uppViewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIStackViewAlignmentBottom; //  | UIViewAutoresizingFlexibleLeftMargin | UIStackViewAlignmentTop
-        NSNumber *upptNum = [NSNumber numberWithInt:uppViewAutores];
+        UIViewAutoresizing uppViewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleBottomMargin;        NSNumber *upptNum = [NSNumber numberWithInt:uppViewAutores];
         
         // 左下&&右下视图约束。
-        UIViewAutoresizing lowViewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIStackViewAlignmentTop; // | UIStackViewAlignmentTop | UIViewAutoresizingFlexibleRightMargin | UIStackViewAlignmentBottom
+        UIViewAutoresizing lowViewAutores = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleTopMargin;
         NSNumber *lowtNum = [NSNumber numberWithInt:lowViewAutores];
         
         // 添加到数组中，返回供View里添加约束。
-        NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:leftNum, rightNum, upptNum, lowtNum, nil];
+        NSMutableArray *tempArr = [NSMutableArray arrayWithObjects:num, upptNum, lowtNum, nil];
         
         return tempArr;
     }];
-    
     return aoturesView;
 }
 
+// 设置点击事件，判断autoresizing设置是否正确。
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
     
     CGRect temp = self.mainView.frame;
