@@ -24,13 +24,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bEd-jl-rqj" userLabel="mainView">
-                                <rect key="frame" x="0.0" y="130" width="414" height="433"/>
+                                <rect key="frame" x="0.0" y="134" width="414" height="444"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1bA-kk-dmH" userLabel="leftView">
-                                        <rect key="frame" x="0.0" y="0.0" width="207" height="433"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="444"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QAw-6X-Cyh" userLabel="firstView">
-                                                <rect key="frame" x="10" y="10" width="192" height="204"/>
+                                                <rect key="frame" x="10" y="10" width="192.66666666666666" height="209.66666666666669"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
@@ -44,7 +44,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Eah-fW-ERI" userLabel="secondView">
-                                                <rect key="frame" x="10" y="219" width="192" height="204"/>
+                                                <rect key="frame" x="10" y="224.66666666666671" width="192.66666666666666" height="209.33333333333329"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
@@ -181,10 +181,10 @@
                                         </variation>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u6n-B0-ff5" userLabel="rightView">
-                                        <rect key="frame" x="207" y="0.0" width="207" height="433"/>
+                                        <rect key="frame" x="207.66666666666663" y="0.0" width="206.33333333333337" height="444"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Tt-at-dCU" userLabel="thirdView">
-                                                <rect key="frame" x="5" y="10" width="192" height="204"/>
+                                                <rect key="frame" x="5" y="10" width="191.33333333333334" height="209.66666666666669"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
@@ -198,7 +198,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xqj-jh-nPr" userLabel="fourthView">
-                                                <rect key="frame" x="5" y="219" width="192" height="204"/>
+                                                <rect key="frame" x="5" y="224.66666666666671" width="191.33333333333334" height="209.33333333333329"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
                                                         <integer key="value" value="10"/>
@@ -479,14 +479,14 @@
                         <constraints>
                             <constraint firstItem="bEd-jl-rqj" firstAttribute="leading" secondItem="eXP-EM-rqm" secondAttribute="leading" id="0Ye-bU-9Dt"/>
                             <constraint firstItem="bEd-jl-rqj" firstAttribute="leading" secondItem="eXP-EM-rqm" secondAttribute="leadingMargin" constant="156" id="B5U-R5-bXM"/>
-                            <constraint firstItem="bEd-jl-rqj" firstAttribute="top" secondItem="DqZ-gt-Wwd" secondAttribute="bottom" constant="109.5" id="JvH-sy-dH9"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bEd-jl-rqj" secondAttribute="trailing" constant="156" id="MFx-GV-6P1"/>
                             <constraint firstItem="bEd-jl-rqj" firstAttribute="leading" secondItem="eXP-EM-rqm" secondAttribute="leading" constant="292" id="MNw-vm-qwM">
                                 <variation key="heightClass=compact-widthClass=compact" constant="156"/>
                             </constraint>
                             <constraint firstItem="bEd-jl-rqj" firstAttribute="top" secondItem="DqZ-gt-Wwd" secondAttribute="bottom" id="O3l-Js-GWo"/>
-                            <constraint firstItem="JPq-1d-CMu" firstAttribute="top" secondItem="bEd-jl-rqj" secondAttribute="bottom" constant="173.5" id="SDe-Gl-sNL"/>
+                            <constraint firstItem="JPq-1d-CMu" firstAttribute="top" secondItem="bEd-jl-rqj" secondAttribute="bottom" constant="158" id="SDe-Gl-sNL"/>
                             <constraint firstAttribute="trailing" secondItem="bEd-jl-rqj" secondAttribute="trailing" id="XCV-vO-ket"/>
+                            <constraint firstItem="bEd-jl-rqj" firstAttribute="top" secondItem="eXP-EM-rqm" secondAttribute="top" constant="134" id="XcY-oS-LIW"/>
                             <constraint firstAttribute="bottom" secondItem="bEd-jl-rqj" secondAttribute="bottom" id="Y7h-VA-ZsV"/>
                             <constraint firstItem="JPq-1d-CMu" firstAttribute="top" secondItem="bEd-jl-rqj" secondAttribute="bottom" id="bZc-cc-p6K"/>
                             <constraint firstAttribute="trailing" secondItem="bEd-jl-rqj" secondAttribute="trailing" constant="292" id="gqn-Wf-KQr">
@@ -498,7 +498,6 @@
                             <mask key="constraints">
                                 <exclude reference="0Ye-bU-9Dt"/>
                                 <exclude reference="B5U-R5-bXM"/>
-                                <exclude reference="JvH-sy-dH9"/>
                                 <exclude reference="MFx-GV-6P1"/>
                                 <exclude reference="MNw-vm-qwM"/>
                                 <exclude reference="O3l-Js-GWo"/>
@@ -529,7 +528,6 @@
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
                                 <include reference="0Ye-bU-9Dt"/>
-                                <include reference="JvH-sy-dH9"/>
                                 <include reference="XCV-vO-ket"/>
                                 <include reference="SDe-Gl-sNL"/>
                             </mask>
@@ -538,7 +536,6 @@
                     <connections>
                         <outlet property="mainView" destination="bEd-jl-rqj" id="CSB-Rj-XKH"/>
                         <outlet property="mainViewBottom" destination="SDe-Gl-sNL" id="MLj-sS-JoP"/>
-                        <outlet property="mainViewTop" destination="JvH-sy-dH9" id="fja-FX-WKH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5AN-BS-5Ob" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -127,8 +127,10 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     
-    // 将VCModel添加到data数组中。
-    [self.dataArrM addObject:self.viewContModelArrM];
+    // 将VCModel添加到data数组中，并防止每次点击都添加。
+    if (self.dataArrM.count == 1) {
+        [self.dataArrM addObject:self.viewContModelArrM];
+    }
     
     // 根据indexPath获取到对应Cell。
     RootTableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
