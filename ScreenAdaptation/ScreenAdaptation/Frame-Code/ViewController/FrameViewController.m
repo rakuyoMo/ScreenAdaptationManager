@@ -23,7 +23,7 @@
     
     // 重新布局BaseView。
     CGFloat mainViewLength = MIN(self.view.frame.size.height, self.view.frame.size.width);
-    [self.mainView frameWithSize:CGSizeMake(mainViewLength, mainViewLength)];
+    [self.mainView frameWithSize:CGSizeMake(mainViewLength, mainViewLength )];
 }
 
 #pragma mark - 初始化基础视图

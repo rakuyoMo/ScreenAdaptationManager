@@ -84,6 +84,8 @@
 #pragma mark - 设置视图Frame。
 - (void)frameWithSize:(CGSize)size {
     
+
+    
     // 初始化第一次进入视图时View的Frame。
     UIDeviceOrientation orien = [UIDevice currentDevice].orientation;
     

@@ -16,13 +16,14 @@
 @interface AoturesizingCodeView ()
 
 #pragma mark - 子视图属性。
-@property(nonatomic, weak) UIView *leftView;
-@property(nonatomic, weak) UIView *rightView;
 
-@property(nonatomic, weak) UIView *leftUpperView;
-@property(nonatomic, weak) UIView *leftLowerView;
-@property(nonatomic, weak) UIView *rightUpperView;
-@property(nonatomic, weak) UIView *rightLowerView;
+@property(nonatomic, strong) UIView *leftView;
+@property(nonatomic, strong) UIView *rightView;
+
+@property(nonatomic, strong) UIView *leftUpperView;
+@property(nonatomic, strong) UIView *leftLowerView;
+@property(nonatomic, strong) UIView *rightUpperView;
+@property(nonatomic, strong) UIView *rightLowerView;
 
 @end
 
@@ -104,21 +105,17 @@
     CGFloat baseS = 5;
     CGFloat baseX = 10;
     CGFloat baseY = 10;
-    
-    CGFloat baseLeftW = leftViewSize.width - baseX - baseS;
-    CGFloat baseLeftH = (leftViewSize.height * 0.5) - baseY - baseS;
-    
-    CGFloat baseRightW = leftViewSize.width - baseX - baseS;
-    CGFloat baseRightH = (leftViewSize.height * 0.5) - baseY - baseS;
+    CGFloat baseW = leftViewSize.width - baseX - baseS;
+    CGFloat baseH = (leftViewSize.height * 0.5) - baseY - baseS;
     
     // 左上子视图frame
-    self.leftUpperView.frame = CGRectMake(baseX, baseY, baseLeftW, baseLeftH);
+    self.leftUpperView.frame = CGRectMake(baseX, baseY, baseW, baseH);
     // 左下子视图frame
-    self.leftLowerView.frame = CGRectMake(baseX, baseY * 2 + baseLeftH, baseLeftW, baseLeftH);
+    self.leftLowerView.frame = CGRectMake(baseX, baseY * 2 + baseH, baseW, baseH);
     // 右上子视图frame
-    self.rightUpperView.frame = CGRectMake(baseS, baseY, baseRightW, baseRightH);
+    self.rightUpperView.frame = CGRectMake(baseS, baseY, baseW, baseH);
     // 右下子视图frame
-    self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 + baseRightH, baseRightW, baseRightH);
+    self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 +baseH, baseW, baseH);
 }
 
 #pragma mark - 封装设置AutoresizingMask的方法。
@@ -130,15 +127,15 @@
     // 设置左视图的AutoresizingMask
     self.leftView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
     // 设置右视图的AutoresizingMask
-    self.rightView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
+    self.rightView.autoresizingMask = (UIViewAutoresizing)[tempArrM[1] unsignedIntegerValue];
     // 设置左上视图的AutoresizingMask
-    self.leftUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
+    self.leftUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
     // 设置左下视图的AutoresizingMask
-    self.leftLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
+    self.leftLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[3] unsignedIntegerValue];
     // 设置右上视图的AutoresizingMask
-    self.rightUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
+    self.rightUpperView.autoresizingMask = (UIViewAutoresizing)[tempArrM[2] unsignedIntegerValue];
     // 设置右下视图的AutoresizingMask
-    self.rightLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[0] unsignedIntegerValue];
+    self.rightLowerView.autoresizingMask = (UIViewAutoresizing)[tempArrM[3] unsignedIntegerValue];
 }
 
 @end
