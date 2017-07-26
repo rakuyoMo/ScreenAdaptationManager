@@ -96,7 +96,6 @@
     // 减去横屏时屏幕顶端的NaviBar
     if (orien == UIDeviceOrientationLandscapeLeft || orien == UIDeviceOrientationLandscapeRight ) {
         
-#warning 减去NaviBar的方法老实说，这么做不太满意。
         // 老实说这个样子做好像不太好。
         // 但是如果只传宽高的话只能这么弄，在View里判断屏幕尺寸。
         // 如果不只传宽高，那么可以再VC里的viewDidLayoutSubviews里获取Bar的高度，剪掉之后直接作为Y值传过来，设置View的Frame。
@@ -136,21 +135,17 @@
     CGFloat baseS = 5;
     CGFloat baseX = 10;
     CGFloat baseY = 10;
-    
-    CGFloat baseLeftW = leftViewSize.width - baseX - baseS;
-    CGFloat baseLeftH = (leftViewSize.height * 0.5) - baseY - baseS;
-    
-    CGFloat baseRightW = leftViewSize.width - baseX - baseS;
-    CGFloat baseRightH = (leftViewSize.height * 0.5) - baseY - baseS;
+    CGFloat baseW = leftViewSize.width - baseX - baseS;
+    CGFloat baseH = (leftViewSize.height * 0.5) - baseY - baseS;
     
     // 左上子视图frame
-    self.leftUpperView.frame = CGRectMake(baseX, baseY, baseLeftW, baseLeftH);
+    self.leftUpperView.frame = CGRectMake(baseX, baseY, baseW, baseH);
     // 左下子视图frame
-    self.leftLowerView.frame = CGRectMake(baseX, baseY * 2 + baseLeftH, baseLeftW, baseLeftH);
+    self.leftLowerView.frame = CGRectMake(baseX, baseY * 2 + baseH, baseW, baseH);
     // 右上子视图frame
-    self.rightUpperView.frame = CGRectMake(baseS, baseY, baseRightW, baseRightH);
+    self.rightUpperView.frame = CGRectMake(baseS, baseY, baseW, baseH);
     // 右下子视图frame
-    self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 +baseRightH, baseRightW, baseRightH);
+    self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 +baseH, baseW, baseH);
 }
 
 @end
