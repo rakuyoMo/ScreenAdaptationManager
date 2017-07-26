@@ -15,12 +15,6 @@
 
 @interface FrameCodeView ()
 
-#pragma mark - 视图坐标属性。
-@property(nonatomic, assign) CGFloat mainViewX;
-@property(nonatomic, assign) CGFloat mainViewY;
-@property(nonatomic, assign) CGFloat mainViewWidth;
-@property(nonatomic, assign) CGFloat mainViewHeight;
-
 #pragma mark - 子视图属性。
 @property(nonatomic, weak) UIView *leftView;
 @property(nonatomic, weak) UIView *rightView;
