@@ -13,15 +13,7 @@
 #define MAINSCRSIZE [[UIScreen mainScreen] bounds].size
 #endif
 
-
-
 @interface AoturesizingCodeView ()
-
-#pragma mark - 视图坐标属性。
-@property(nonatomic, assign) CGFloat mainViewX;
-@property(nonatomic, assign) CGFloat mainViewY;
-@property(nonatomic, assign) CGFloat mainViewWidth;
-@property(nonatomic, assign) CGFloat mainViewHeight;
 
 #pragma mark - 子视图属性。
 @property(nonatomic, weak) UIView *leftView;
@@ -93,12 +85,10 @@
 - (void)frameWithSize:(CGSize)size {
     
     // 初始化第一次进入视图时View的Frame。
-    self.mainViewWidth = size.width;
-    self.mainViewHeight = size.height;
-    self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5;
-    self.mainViewX = fabs(MAINSCRSIZE.width - size.width) * 0.5;
+    CGFloat mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5;
+    CGFloat mainViewX = fabs(MAINSCRSIZE.width - size.width) * 0.5;
     
-    self.frame = CGRectMake(self.mainViewX, self.mainViewY, self.mainViewWidth, self.mainViewHeight);
+    self.frame = CGRectMake(mainViewX, mainViewY, size.width, size.height);
     
     // 设置左视图和右视图的frame
     // 左视图
@@ -128,7 +118,7 @@
     // 右上子视图frame
     self.rightUpperView.frame = CGRectMake(baseS, baseY, baseRightW, baseRightH);
     // 右下子视图frame
-    self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 +baseRightH, baseRightW, baseRightH);
+    self.rightLowerView.frame = CGRectMake(baseS, baseY * 2 + baseRightH, baseRightW, baseRightH);
 }
 
 #pragma mark - 封装设置AutoresizingMask的方法。

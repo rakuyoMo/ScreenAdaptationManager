@@ -105,7 +105,6 @@
     return self.dataArrM[0].count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // 设置cell标识
@@ -120,6 +119,7 @@
     
     // 设置模型数据。
     [cell setTableViewCellArrM:self.dataArrM WithIndexPathRow:indexPath.row];
+//    [cell setTableViewCellArrM:self.dataArrM WithIndexPathRow:indexPath.row];
 
     return cell;
 }

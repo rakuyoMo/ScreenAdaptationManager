@@ -93,6 +93,12 @@
     // 初始化第一次进入视图时View的Frame。
     UIDeviceOrientation orien = [UIDevice currentDevice].orientation;
     
+    // 初始化设置frame的x、y、width、height值。
+    CGFloat mainViewX = fabs(MAINSCRSIZE.width - size.width) * 0.5;
+    CGFloat mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5;
+    CGFloat mainViewWidth = size.width;
+    CGFloat mainViewHeight = size.height;
+    
     // 减去横屏时屏幕顶端的NaviBar
     if (orien == UIDeviceOrientationLandscapeLeft || orien == UIDeviceOrientationLandscapeRight ) {
         
@@ -109,17 +115,13 @@
         }
         
         // 横屏时候，这里在plus下，naviBar的高度是44，iPhone 7下是32.
-        self.mainViewWidth = size.width - naviBarH;
-        self.mainViewHeight = size.height - naviBarH;
-        self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5 + naviBarH;
-    } else {
-        self.mainViewWidth = size.width;
-        self.mainViewHeight = size.height;
-        self.mainViewY = fabs(MAINSCRSIZE.height - size.height) * 0.5;
+        mainViewWidth -= naviBarH;
+        mainViewHeight -= naviBarH;
+        mainViewY += naviBarH;
     }
-    self.mainViewX = fabs(MAINSCRSIZE.width - size.width) * 0.5;
     
-    self.frame = CGRectMake(self.mainViewX, self.mainViewY, self.mainViewWidth, self.mainViewHeight);
+    // 设置frame
+    self.frame = CGRectMake(mainViewX, mainViewY, mainViewWidth, mainViewHeight);
 }
 
 #pragma mark - 重新对子视图进行布局。
