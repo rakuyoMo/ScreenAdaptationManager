@@ -11,10 +11,7 @@
 
 @interface RootTableViewCell : UITableViewCell
 
-// 用一个可变数组存储VCModel和titleModel
-@property(nonatomic, strong)NSMutableArray *tableViewCellArrM;
-
-// 设置tableViewCellArrM的值。
-- (void)setTableViewCellArrM:(NSMutableArray<NSMutableArray *> *)tableViewCellArrM WithIndexPathRow:(NSInteger)row;
+// 单个cell的model
+@property(nonatomic, strong)RootTableViewModel *tableViewCellModel;
 
 @end

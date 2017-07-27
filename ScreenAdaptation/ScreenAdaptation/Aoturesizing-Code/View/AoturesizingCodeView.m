@@ -44,14 +44,12 @@
         // 创建左视图
         UIView *leftView = [[UIView alloc] init];
         self.leftView = leftView;
-        self.leftView.backgroundColor = [UIColor blackColor];
         // 将二级视图加入BaseView主视图。
         [self addSubview:self.leftView];
         
         // 创建右视图，和左视图方法相同。
         UIView *rightView = [[UIView alloc] init];
         self.rightView = rightView;
-        self.rightView.backgroundColor = [UIColor redColor];
         [self addSubview:self.rightView];
         
         // 创建4个子视图

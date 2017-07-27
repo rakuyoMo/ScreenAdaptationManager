@@ -14,10 +14,8 @@
 @property(nonatomic, strong)UIViewController *viewController;   // cell对应的控制器。
 @property(nonatomic, strong)NSString *title;    // cell标题
 
-// model中viewController数据的初始化方法。
-+ (instancetype)modelWithViewController:(UIViewController *)viewController;
-// model中viewController数据的初始化方法。
-+ (instancetype)modelWithTitle:(NSString *)title;
+// 设置模型
++ (instancetype)modelWithViewController:(UIViewController *)viewController title:(NSString *)title;
 
 
 @end

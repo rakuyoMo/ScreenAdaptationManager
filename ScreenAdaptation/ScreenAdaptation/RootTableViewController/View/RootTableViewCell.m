@@ -21,13 +21,11 @@
     return self;
 }
 
-// 对self.tableViewCellArrM进行赋值。
-- (void)setTableViewCellArrM:(NSMutableArray<NSMutableArray *> *)tableViewCellArrM WithIndexPathRow:(NSInteger)row{
-
-    _tableViewCellArrM = tableViewCellArrM;
+// 自定义rootTableViewModel属性的set方法，进行赋值。
+- (void)setTableViewCellModel:(RootTableViewModel *) rootTableViewModel{
     
-    RootTableViewModel *tempModel = tableViewCellArrM[0][row];
-    self.textLabel.text = tempModel.title;
+    _tableViewCellModel = rootTableViewModel;
+    self.textLabel.text = rootTableViewModel.title;
 }
 
 @end
